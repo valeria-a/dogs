@@ -13,21 +13,21 @@ const RandomDog = () => {
     const handleShowClick = async () => {
         let dogUrl = null
         setIsLoading(true)
+        setUrl(null)
         do {
             const response = await axios.get(URL)
             dogUrl = response.data.url
-            console.log('url:', dogUrl)
+            // console.log('url:', dogUrl)
         } while ( ! ( dogUrl.endsWith('jpg') || dogUrl.endsWith('jpeg') || dogUrl.endsWith('png'))  )
             
-        setUrl(dogUrl)
-        setIsLoading(false)   
+        setUrl(dogUrl) 
     }
 
     return(
         <>
             <Button variant="contained" onClick={handleShowClick}>SHOW ME A DOG</Button>
-            {isLoading ? <CircularProgress/> : 
-                url && <DogImage size={'450px'} url={url}/>}
+            {isLoading && <CircularProgress/> }
+            <DogImage size={'450px'} url={url} setLoading={setIsLoading}/>
         </>
     )
 }
