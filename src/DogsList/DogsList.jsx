@@ -1,3 +1,4 @@
+import { List } from "@mui/material"
 import DogItem from "../DogItem/DogItem"
 
 const DogsList = ({dogsList}) => {
@@ -7,9 +8,9 @@ const DogsList = ({dogsList}) => {
     )})
 
     return (
-        <ul>
+        <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
             {items}
-        </ul>
+        </List>
     )
 }
 export default DogsList

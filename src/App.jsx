@@ -11,6 +11,11 @@ function App() {
   const [dogsList, setDogsList] = useState([])
   const [currentUrl, setCurrentUrl] = useState(null)
 
+  // let disableButton = false
+  // if (dogsList.includes(currentUrl)) {
+  //   disableButton = true
+  // }
+
   const handleAddDog = () => {
     
     // don't do this - this will not work!!!
@@ -33,6 +38,7 @@ function App() {
       <RandomDog url={currentUrl} setUrl={setCurrentUrl}/>
       <Button onClick={handleAddDog} 
         disabled={dogsList.includes(currentUrl)}>
+        {/* disabled={disableButton}> */}
         Add
       </Button>
       <DogsList dogsList={dogsList} />
