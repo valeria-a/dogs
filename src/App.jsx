@@ -32,7 +32,7 @@ function App() {
       <h2 style={{textAlign: 'center'}}>Dogs App</h2>
       <RandomDog url={currentUrl} setUrl={setCurrentUrl}/>
       <Button onClick={handleAddDog}>Add</Button>
-      <DogsList />
+      <DogsList dogsList={dogsList} />
     </Stack>
   );
 }
