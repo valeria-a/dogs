@@ -30,6 +30,11 @@ function App() {
 
   }
 
+  const handleRemoveDog = (urlToRemove) => {
+    const newDogsList = dogsList.filter(url => url !== urlToRemove)
+    setDogsList(newDogsList)
+  }
+
   return (
     <Stack direction='column' spacing={3} width={'30%'} m={'auto'} height={'100%'}
       justifyContent="start"
@@ -41,7 +46,7 @@ function App() {
         {/* disabled={disableButton}> */}
         Add
       </Button>
-      <DogsList dogsList={dogsList} />
+      <DogsList dogsList={dogsList} onRemoveDog={handleRemoveDog}/>
     </Stack>
   );
 }

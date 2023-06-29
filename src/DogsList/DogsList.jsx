@@ -1,10 +1,10 @@
 import { List } from "@mui/material"
 import DogItem from "../DogItem/DogItem"
 
-const DogsList = ({dogsList}) => {
+const DogsList = ({dogsList, onRemoveDog}) => {
 
     const items = dogsList.map((dogUrl) =>{return (
-        <DogItem key={dogUrl} url={dogUrl} />
+        <DogItem key={dogUrl} url={dogUrl} onRemoveDog={onRemoveDog}/>
     )})
 
     return (

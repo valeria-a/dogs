@@ -2,7 +2,7 @@ import { Divider, IconButton, ListItem, ListItemText } from "@mui/material";
 import DogImage from "../DogImage/DogImage";
 import DeleteIcon from '@mui/icons-material/Delete';
 
-const DogItem = ({url}) => {
+const DogItem = ({url, onRemoveDog}) => {
 
     const splitArray = url.split('/')
     const fileName = splitArray[splitArray.length-1]
@@ -12,7 +12,7 @@ const DogItem = ({url}) => {
             <ListItem 
                 alignItems="flex-start"  
                 secondaryAction={
-                    <IconButton edge="end" aria-label="delete">
+                    <IconButton edge="end" aria-label="delete" onClick={() => onRemoveDog(url)}>
                       <DeleteIcon />
                     </IconButton>
                   }>
