@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 
-const DogImage = ({size, url, setLoading}) => {
+const DogImage = ({size, url, setLoading, addMargin=false}) => {
 
     const [imgLoaded, setImgLoaded] = useState(false)
 
@@ -20,7 +20,7 @@ const DogImage = ({size, url, setLoading}) => {
 
     return(
         <img style={{width: size, height: size, objectFit: 'cover', borderRadius: '15px', 
-            visibility: url && imgLoaded ? 'visible' : 'hidden'}}
+            visibility: url && imgLoaded ? 'visible' : 'hidden', marginRight: addMargin ? '0.5em' : 0}}
             src={url} onLoad={handleFinishedLoading}
         />
     )
