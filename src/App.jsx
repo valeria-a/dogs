@@ -31,7 +31,10 @@ function App() {
       alignItems="center">
       <h2 style={{textAlign: 'center'}}>Dogs App</h2>
       <RandomDog url={currentUrl} setUrl={setCurrentUrl}/>
-      <Button onClick={handleAddDog}>Add</Button>
+      <Button onClick={handleAddDog} 
+        disabled={dogsList.includes(currentUrl)}>
+        Add
+      </Button>
       <DogsList dogsList={dogsList} />
     </Stack>
   );
