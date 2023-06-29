@@ -1,6 +1,6 @@
 import { Button, CircularProgress } from "@mui/material"
 import DogImage from "../DogImage/DogImage"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import axios from 'axios'
 
 const URL = "https://random.dog/woof.json"
@@ -9,6 +9,26 @@ const URL = "https://random.dog/woof.json"
 const RandomDog = ({url, setUrl}) => {
 
     const [isLoading, setIsLoading] = useState(false)
+
+    //useEffect(function - what to do, array of dependencies)
+    //the function will be called only on mount (first render only)
+    // useEffect(()=>{}, [])
+
+    // the function will be called on EACH render
+    // usually you should not use this!!!!
+    // useEffect(()=>{})
+
+    //the funciton will be called after renders that occured
+    //because of url OR isLoading change
+    // useEffect(()=>{}, [url, isLoading])
+
+    useEffect(() => {
+        const fetchData = async () => {
+            await handleShowClick()
+        }
+        fetchData()
+    }, [])
+   
 
     const handleShowClick = async () => {
         let dogUrl = null
@@ -22,6 +42,7 @@ const RandomDog = ({url, setUrl}) => {
             
         setUrl(dogUrl) 
     }
+    
 
     return(
         <>
