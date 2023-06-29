@@ -6,9 +6,8 @@ import axios from 'axios'
 const URL = "https://random.dog/woof.json"
 //fjghkdhgdklhfgl
 
-const RandomDog = () => {
+const RandomDog = ({url, setUrl}) => {
 
-    const [url, setUrl] = useState(null)
     const [isLoading, setIsLoading] = useState(false)
 
     const handleShowClick = async () => {
