@@ -44,19 +44,19 @@ function App() {
     <Stack direction='column' spacing={3} width={'30%'} m={'auto'} height={'100%'}
       justifyContent="start"
       alignItems="center">
-      <RedBorderBox color={'blue'}>
+      {/* <RedBorderBox color={'blue'}> */}
         <h2 style={{textAlign: 'center'}}>Dogs App</h2>
-      </RedBorderBox>
+      {/* </RedBorderBox> */}
       <RandomDog url={currentUrl} setUrl={setCurrentUrl}/>
 
-      <RedBorderBox>
+      {/* <RedBorderBox> */}
         <Button onClick={handleAddDog} 
           disabled={dogsList.includes(currentUrl)}>
           {/* disabled={disableButton}> */}
           Add
         </Button>
         <DogsList dogsList={dogsList} onRemoveDog={handleRemoveDog}/>
-      </RedBorderBox>
+      {/* </RedBorderBox> */}
     </Stack>
   );
 }
