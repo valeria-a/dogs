@@ -12,12 +12,14 @@ export const dogsReducer = (dogsList, {type, context}) => {
         case ACTION_ADD_DOG:
             // I expect that context looks like:
             // context = {urlToAdd: "http://sjdhfgjshgssh.com"}
-            return [...dogsList, context.urlToAdd]
+            return [...dogsList, 
+                    {id: Date.now(),
+                    url: context.urlToAdd}]
 
         case ACTION_REMOVE_DOG:
             // I expect that context looks like:
             // context = {urlToRemove: "http://sjdhfgjshgssh.com"}
-            return dogsList.filter(url => url !== context.urlToRemove)
+            return dogsList.filter(dogObj => dogObj.url !== context.urlToRemove)
 
         case ACTION_CLEAR_ALL_DOGS:
             return []

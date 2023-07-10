@@ -7,8 +7,8 @@ const DogsList = () => {
 
     const dogsList = useContext(DogsListContext)
 
-    const items = dogsList.map((dogUrl) =>{return (
-        <DogItem key={dogUrl} url={dogUrl}/>
+    const items = dogsList.map((dogObj) =>{return (
+        <DogItem key={dogObj.id} dog={dogObj}/>
     )})
 
     return (

@@ -14,6 +14,7 @@ import { ProfilePage } from './ProfilePage';
 import { DogsProvider } from './context/dogsContext';
 import { LoginPage } from './LoginPage';
 import { ErrorPage } from './ErrorPage';
+import { DogDetailsPage } from './DogDetailPage';
 
 const router = createBrowserRouter([
 
@@ -30,15 +31,17 @@ const router = createBrowserRouter([
       {
         path: '/',
         element: 
-
-            <MainPage />
-
+        <MainPage />
       },
       {
         path: '/profile',
         element: <>
           <ProfilePage />
           </>
+      },
+      {
+        path: 'dogs/:id',
+        element: <DogDetailsPage />
       }
     ]
   },
