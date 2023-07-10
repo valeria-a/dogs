@@ -11,6 +11,8 @@ export const MainPage = () => {
     const dogsList = useContext(DogsListContext)
     const dogsDispatch = useContext(DogsDispatchContext)
 
+    console.log('Rendering MainPage')
+
 
     return (
   
