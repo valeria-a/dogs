@@ -2,6 +2,8 @@ import { Button, CircularProgress } from "@mui/material"
 import DogImage from "../DogImage/DogImage"
 import { useEffect, useState } from "react"
 import axios from 'axios'
+import { useContext } from "react"
+import { DogsListContext } from "../context/dogsContext"
 
 const URL = "https://random.dog/woof.json"
 //fjghkdhgdklhfgl
@@ -9,6 +11,7 @@ const URL = "https://random.dog/woof.json"
 const RandomDog = ({url, setUrl}) => {
 
     const [isLoading, setIsLoading] = useState(false)
+    // useContext(DogsListContext)
 
     //useEffect(function - what to do, array of dependencies)
     //the function will be called only on mount (first render only)
